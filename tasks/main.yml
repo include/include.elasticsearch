@@ -2,11 +2,11 @@
 
 - name: ELASTICSEARCH | add elasticsearch repo key
   rpm_key: key="http://packages.elasticsearch.org/GPG-KEY-elasticsearch" state=present
-  tags: pkg
+  tags: elasticsearch
 
 - name: ELASTICSEARCH | enable repository
   template: src=elasticsearch_repo.j2 dest=/etc/yum.repos.d/elasticsearch.repo
-  tags: pkg
+  tags: elasticsearch
 
 - name: ELASTICSEARCH | install 
   yum: name={{ item }} state=latest
@@ -14,7 +14,7 @@
    - elasticsearch
   notify:
    - restart elasticsearch
-   tags: pkg
+  tags: elasticsearch
 
 - name: ELASTICSEARCH | mkdir config folder
   file: path={{ elasticsearch_conf_dir }} state=directory owner=root group=root mode=0644
@@ -24,5 +24,5 @@
   template: src=elasticsearch.yml.j2 dest={{ elasticsearch_conf_dir }}/{{ elasticsearch_conf_file }} owner=root group=root mode=0644
   notify:
    - restart elasticsearch
-   tags: elasticsearch
+  tags: elasticsearch
  
