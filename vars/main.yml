@@ -1,0 +1,4 @@
+---
+
+elasticsearch_version: 1.0
+elasticsearch_conf: /usr/local/etc/elasticsearch/elasticsearch.yml
