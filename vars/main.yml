@@ -3,3 +3,5 @@
 elasticsearch_version: 1.0
 elasticsearch_conf_dir: /usr/local/etc/elasticsearch
 elasticsearch_conf_file: elasticsearch.yml
+
+openjdk_version: 1.7.0

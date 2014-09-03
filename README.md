@@ -16,7 +16,7 @@ Change variables under `vars/main.yml`. All variables used in this role are ment
 Dependencies
 ------------
 
-None.
+This role installs OpenJDK 1.7.0 if not present.
 
 Example Playbook
 ----------------

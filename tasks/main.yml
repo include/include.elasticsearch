@@ -1,5 +1,5 @@
 ---
-
+# SETUP YUM REPO
 - name: ELASTICSEARCH | add elasticsearch repo key
   rpm_key: key="http://packages.elasticsearch.org/GPG-KEY-elasticsearch" state=present
   tags: elasticsearch
@@ -8,6 +8,16 @@
   template: src=elasticsearch_repo.j2 dest=/etc/yum.repos.d/elasticsearch.repo
   tags: elasticsearch
 
+
+# JAVA
+- name: ELASTICSEARCH | install OpenJDK
+  yum: name="java-{{ openjdk_version }}-openjdk" state=present
+  tags:
+    - openjdk
+    - elasticsearch
+
+
+# ELASTICSEARCH
 - name: ELASTICSEARCH | install 
   yum: name={{ item }} state=latest
   with_items:
