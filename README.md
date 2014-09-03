@@ -1,9 +1,7 @@
 Tiny Elasticsearch setup on CentOS
 ==================================
 
-A brief description of the role goes here.
-
-This tiny Elasticsearch setup is nothing more than install, configure and run elasticsearch.
+This tiny Elasticsearch setup is nothing more than this... install, configure and run elasticsearch.
 
 Requirements
 ------------
@@ -13,7 +11,7 @@ None.
 Role Variables
 --------------
 
-Default config variable `elasticsearch_conf` is pointing to `/usr/local/etc/elasticsearch/elasticsearch.yml` you can change this under `vars/main.yml`.
+Change variables under `vars/main.yml`. All variables used in this role are mentioned here.
 
 Dependencies
 ------------
